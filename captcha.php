@@ -1,5 +1,17 @@
 <?php
     session_start();
+    
+    function generateRandomString($length = 8)
+    {
+        $character = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $randomString= "" ;
+
+        for ($i=0; $i < $length; $i++) { 
+            $randomString .= $character[rand(0,strlen($character) - 1)];
+        }
+        return $randomString;
+    }
+
     function generateCaptchaImage($text = 'abc')
     {
         header("Content-Type: image/png");
@@ -44,5 +56,6 @@
         imagedestroy($im);
     }
 
+    $_SESSION['captcha'] = generateRandomString();
     generateCaptchaImage($_SESSION['captcha']);
 ?>
