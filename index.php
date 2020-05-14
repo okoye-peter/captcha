@@ -71,7 +71,7 @@
                     </div>
                     <hr>
                     <center>
-                        <img src="captcha.php" alt="">
+                        <img src="https://captchahost.herokuapp.com/captcha.php" alt="">
                     </center>
                     <form action="" method="post" class="mt-5">
                     <div class="input-group mb-3">
